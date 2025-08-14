@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR Store Uploader - ছবি থেকে সরাসরি লিংক</title>
+    <title>AR Store Uploader - Direct Link From Image</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -31,10 +31,22 @@
         }
 
         body {
-            font-family: 'Hind Siliguri', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.8;
+            user-select: none; /* Disable text selection for the entire body */
+            -webkit-user-select: none; /* For Safari */
+            -moz-user-select: none; /* For Firefox */
+            -ms-user-select: none; /* For Internet Explorer/Edge */
+        }
+        
+        /* Allow selection for input fields */
+        input, textarea {
+            user-select: text;
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
         }
 
         .container {
@@ -246,10 +258,10 @@
         <div class="container navbar">
             <div class="logo"><a href="#">AR Uploader</a></div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home">হোম</a></li>
-                <li><a href="#how-it-works">কীভাবে কাজ করে</a></li>
-                <li><a href="#features">বৈশিষ্ট্য</a></li>
-                <li><a href="#faq">প্রশ্নাবলী</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#faq">FAQ</a></li>
             </ul>
             <div class="hamburger" id="hamburger">☰</div>
         </div>
@@ -274,8 +286,8 @@
         <section class="section" id="home">
             <div class="container">
                 <div class="uploader-container">
-                    <h2>ছবি থেকে সরাসরি লিংক তৈরি করুন</h2>
-                    <p>যেকোনো ছবি আপলোড করুন এবং অ্যাপ আইকন বা অন্য কাজে ব্যবহারের জন্য একটি স্থায়ী লিংক পান।</p>
+                    <h2>Create a Direct Link from an Image</h2>
+                    <p>Upload any image and get a permanent link to use as an app icon or for other purposes.</p>
                     
                     <label for="fileInput" id="uploadArea" class="upload-area">
                         <div class="upload-icon">
@@ -283,7 +295,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
                             </svg>
                         </div>
-                        <span class="upload-text">এখানে ফাইল টেনে আনুন অথবা ব্রাউজ করতে ক্লিক করুন</span>
+                        <span class="upload-text">Drag and drop a file here or click to browse</span>
                     </label>
                     <input type="file" id="fileInput" accept="image/*">
                     
@@ -292,10 +304,10 @@
                     
                     <div class="result-section" id="resultSection">
                         <img src="" alt="Image Preview" class="image-preview" id="imagePreview">
-                        <p style="font-weight:600; text-align:center; margin-bottom:15px;">আপনার ছবির লিংক সফলভাবে তৈরি হয়েছে:</p>
+                        <p style="font-weight:600; text-align:center; margin-bottom:15px;">Your image link has been successfully created:</p>
                         <div class="url-container">
                             <input type="text" id="imageUrl" readonly>
-                            <button id="copyBtn" class="copy-btn">কপি করুন</button>
+                            <button id="copyBtn" class="copy-btn">Copy</button>
                         </div>
                     </div>
                 </div>
@@ -319,23 +331,23 @@
         <!-- "How It Works" Section -->
         <section class="section" id="how-it-works">
             <div class="container">
-                <h2 class="section-title">এটি কীভাবে কাজ করে?</h2>
-                <p class="section-subtitle">মাত্র তিনটি সহজ ধাপে আপনার ছবির জন্য একটি সরাসরি লিংক তৈরি করুন।</p>
+                <h2 class="section-title">How Does It Work?</h2>
+                <p class="section-subtitle">Create a direct link for your image in just three simple steps.</p>
                 <div class="steps-grid">
                     <div class="step-card">
                         <div class="icon">📤</div>
-                        <h3>১. ছবি আপলোড করুন</h3>
-                        <p>আপনার ডিভাইস থেকে ছবিটি বেছে নিন অথবা সরাসরি এখানে ড্র্যাগ ও ড্রপ করুন।</p>
+                        <h3>1. Upload Image</h3>
+                        <p>Choose the image from your device or simply drag and drop it here.</p>
                     </div>
                     <div class="step-card">
                         <div class="icon">✨</div>
-                        <h3>২. লিংক তৈরি করুন</h3>
-                        <p>সিস্টেম স্বয়ংক্রিয়ভাবে আপনার ছবিটি আপলোড করে একটি অনন্য ও ব্যবহারযোগ্য লিংক তৈরি করবে।</p>
+                        <h3>2. Generate Link</h3>
+                        <p>The system will automatically upload your image and create a unique, usable link.</p>
                     </div>
                     <div class="step-card">
                         <div class="icon">📋</div>
-                        <h3>৩. কপি ও ব্যবহার করুন</h3>
-                        <p>তৈরি হওয়া লিংকটি এক ক্লিকে কপি করুন এবং আপনার প্রয়োজন অনুযায়ী ব্যবহার করুন।</p>
+                        <h3>3. Copy & Use</h3>
+                        <p>Copy the generated link with a single click and use it wherever you need.</p>
                     </div>
                 </div>
             </div>
@@ -344,15 +356,15 @@
         <!-- Features Section -->
         <section class="section" id="features">
              <div class="container">
-                <h2 class="section-title">আমাদের সেবার বৈশিষ্ট্য</h2>
-                <p class="section-subtitle">আমরা আপনাকে সেরা অভিজ্ঞতা দেওয়ার জন্য কিছু চমৎকার বৈশিষ্ট্য নিয়ে এসেছি।</p>
+                <h2 class="section-title">Features of Our Service</h2>
+                <p class="section-subtitle">We offer some excellent features to provide you with the best experience.</p>
                 <div class="features-grid">
-                     <div class="feature-item"> <div class="icon">⚡</div> <div> <h4>খুব দ্রুত আপলোড</h4> <p>আমাদের দ্রুতগতির সার্ভার সেকেন্ডের মধ্যে আপনার ছবি আপলোড করে লিংক তৈরি করে দেয়।</p> </div> </div>
-                     <div class="feature-item"> <div class="icon">🔗</div> <div> <h4>সরাসরি লিংক</h4> <p>কোনো প্রকার রিডাইরেকশন ছাড়াই সরাসরি ব্যবহারযোগ্য ইমেজ লিংক পান।</p> </div> </div>
-                     <div class="feature-item"> <div class="icon">💸</div> <div> <h4>সম্পূর্ণ বিনামূল্যে</h4> <p>আমাদের এই সেবাটি ব্যবহারের জন্য কোনো ধরনের চার্জ বা সাবস্ক্রিপশন প্রয়োজন নেই।</p> </div> </div>
-                     <div class="feature-item"> <div class="icon">🔒</div> <div> <h4>নিরাপদ ও নির্ভরযোগ্য</h4> <p>আপনার আপলোড করা ছবিগুলো নিরাপদ থাকে এবং লিংকগুলো স্থায়ী হয়।</p> </div> </div>
-                     <div class="feature-item"> <div class="icon">📱</div> <div> <h4>মোবাইল ফ্রেন্ডলি</h4> <p>আপনি যেকোনো ডিভাইস থেকে সহজেই আমাদের ওয়েবসাইট ব্যবহার করতে পারবেন।</p> </div> </div>
-                     <div class="feature-item"> <div class="icon">👤</div> <div> <h4>কোনো রেজিস্ট্রেশন নেই</h4> <p>লিংক তৈরি করার জন্য কোনো অ্যাকাউন্ট খোলা বা সাইন-আপ করার প্রয়োজন নেই।</p> </div> </div>
+                     <div class="feature-item"> <div class="icon">⚡</div> <div> <h4>Very Fast Upload</h4> <p>Our high-speed servers upload your image and generate a link within seconds.</p> </div> </div>
+                     <div class="feature-item"> <div class="icon">🔗</div> <div> <h4>Direct Link</h4> <p>Get a directly usable image link without any redirection.</p> </div> </div>
+                     <div class="feature-item"> <div class="icon">💸</div> <div> <h4>Completely Free</h4> <p>There are no charges or subscriptions required to use our service.</p> </div> </div>
+                     <div class="feature-item"> <div class="icon">🔒</div> <div> <h4>Secure & Reliable</h4> <p>Your uploaded images are secure, and the links are permanent.</p> </div> </div>
+                     <div class="feature-item"> <div class="icon">📱</div> <div> <h4>Mobile Friendly</h4> <p>You can easily use our website from any device.</p> </div> </div>
+                     <div class="feature-item"> <div class="icon">👤</div> <div> <h4>No Registration</h4> <p>No need to create an account or sign up to generate links.</p> </div> </div>
                 </div>
             </div>
         </section>
@@ -360,13 +372,13 @@
         <!-- FAQ Section -->
         <section class="section" id="faq">
             <div class="container">
-                <h2 class="section-title">সাধারণ প্রশ্নাবলী (FAQ)</h2>
-                <p class="section-subtitle">আপনার মনে থাকা কিছু সাধারণ প্রশ্নের উত্তর এখানে খুঁজে নিন।</p>
+                <h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
+                <p class="section-subtitle">Find answers to some common questions you might have.</p>
                 <div class="faq-container">
-                     <div class="faq-item"> <button class="faq-question">এই সেবাটি কি সত্যিই বিনামূল্যে?</button> <div class="faq-answer"> <p>হ্যাঁ, আমাদের ছবি থেকে লিংক তৈরির এই সেবাটি সম্পূর্ণ বিনামূল্যে। এর জন্য কোনো লুকানো খরচ বা সাবস্ক্রিপশনের প্রয়োজন নেই।</p> </div> </div>
-                     <div class="faq-item"> <button class="faq-question">সর্বোচ্চ কত সাইজের ছবি আপলোড করা যাবে?</button> <div class="faq-answer"> <p>আপনি সর্বোচ্চ ৩২ মেগাবাইট (MB) পর্যন্ত ছবি আপলোড করতে পারবেন। আমরা PNG, JPG, JPEG, GIF, এবং BMP ফরম্যাট সাপোর্ট করি।</p> </div> </div>
-                     <div class="faq-item"> <button class="faq-question">আমার আপলোড করা ছবিগুলো কি নিরাপদ?</button> <div class="faq-answer"> <p>হ্যাঁ, আপনার ছবিগুলো নিরাপদ এবং এনক্রিপ্টেড সংযোগের মাধ্যমে আপলোড করা হয়। শুধুমাত্র যাদের কাছে লিংক আছে, তারাই ছবিটি দেখতে পারবে।</p> </div> </div>
-                     <div class="faq-item"> <button class="faq-question">তৈরি করা লিংকগুলো কি স্থায়ী?</button> <div class="faq-answer"> <p>হ্যাঁ, আমাদের দ্বারা তৈরি করা লিংকগুলো স্থায়ী। যতক্ষণ পর্যন্ত ছবিটি আমাদের পরিষেবা নীতি লঙ্ঘন না করছে, ততক্ষণ লিংকটি সক্রিয় থাকবে।</p> </div> </div>
+                     <div class="faq-item"> <button class="faq-question">Is this service really free?</button> <div class="faq-answer"> <p>Yes, our image-to-link generation service is completely free. There are no hidden costs or subscription fees.</p> </div> </div>
+                     <div class="faq-item"> <button class="faq-question">What is the maximum image size I can upload?</button> <div class="faq-answer"> <p>You can upload images up to 32 megabytes (MB). We support PNG, JPG, JPEG, GIF, and BMP formats.</p> </div> </div>
+                     <div class="faq-item"> <button class="faq-question">Are my uploaded images secure?</button> <div class="faq-answer"> <p>Yes, your images are secure and uploaded via an encrypted connection. Only those with the link can view the image.</p> </div> </div>
+                     <div class="faq-item"> <button class="faq-question">Are the generated links permanent?</button> <div class="faq-answer"> <p>Yes, the links we generate are permanent. The link will remain active as long as the image does not violate our terms of service.</p> </div> </div>
                 </div>
             </div>
         </section>
@@ -391,27 +403,27 @@
             <div class="footer-content">
                 <div>
                     <h4>AR Uploader</h4>
-                    <p>ছবি থেকে সরাসরি লিংক তৈরির একটি সহজ ও দ্রুত সমাধান।</p>
+                    <p>A simple and fast solution for creating direct links from images.</p>
                 </div>
                 <div>
-                    <h4>গুরুত্বপূর্ণ লিংক</h4>
+                    <h4>Important Links</h4>
                     <ul>
-                        <li><a href="#home">হোম</a></li>
-                        <li><a href="#how-it-works">কীভাবে কাজ করে</a></li>
-                        <li><a href="#features">বৈশিষ্ট্য</a></li>
-                        <li><a href="#faq">প্রশ্নাবলী</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
                  <div>
-                    <h4>আইনি</h4>
+                    <h4>Legal</h4>
                     <ul>
-                        <li><a href="#">গোপনীয়তা নীতি</a></li>
-                        <li><a href="#">ব্যবহারের শর্তাবলী</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                &copy; 2024 AR Uploader. সকল স্বত্ব সংরক্ষিত।
+                &copy; 2024 AR Uploader. All rights reserved.
             </div>
         </div>
     </footer>
@@ -472,19 +484,19 @@
             
             copyBtn.addEventListener('click', () => {
                 navigator.clipboard.writeText(imageUrlInput.value).then(() => {
-                    copyBtn.textContent = 'কপি হয়েছে!';
-                    setTimeout(() => { copyBtn.textContent = 'কপি করুন'; }, 2000);
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
                 });
             });
 
             function handleFile(file) {
                 if (!file) return;
                 if (!file.type.startsWith('image/')) {
-                    showError('অনুগ্রহ করে একটি ছবি ফাইল (JPG, PNG, GIF) আপলোড করুন।');
+                    showError('Please upload an image file (JPG, PNG, GIF).');
                     return;
                 }
                 if (file.size > 32 * 1024 * 1024) {
-                    showError('ফাইলের সাইজ ৩২ মেগাবাইটের বেশি হতে পারবে না।');
+                    showError('File size cannot exceed 32 MB.');
                     return;
                 }
                 uploadImage(file);
@@ -501,10 +513,10 @@
                     if (result.success) {
                         displayResult(result.data);
                     } else {
-                        showError(result.error?.message || 'একটি অজানা সমস্যা হয়েছে।');
+                        showError(result.error?.message || 'An unknown error occurred.');
                     }
                 })
-                .catch(() => { showError('নেটওয়ার্ক সমস্যা। আবার চেষ্টা করুন।'); })
+                .catch(() => { showError('Network error. Please try again.'); })
                 .finally(() => { showLoading(false); });
             }
 
