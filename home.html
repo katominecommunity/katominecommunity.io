@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Google Drive Direct Link Generator - Fast & Free Tool</title>
     <meta name="description" content="Generate direct download links for Google Drive files quickly and securely. Free, easy-to-use tool with no data storage.">
     <meta name="keywords" content="Google Drive, direct link generator, download link, file sharing, free tool">
@@ -32,6 +32,8 @@
             min-height: 100vh;
             color: var(--text-color);
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         /* Header */
@@ -48,27 +50,30 @@
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: var(--primary-color);
         }
 
         .nav-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
+            align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--text-color);
             font-weight: 500;
+            font-size: 0.9rem;
+            padding: 0.5rem;
             transition: color 0.3s ease;
         }
 
@@ -77,55 +82,62 @@
             color: var(--primary-color);
         }
 
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
         /* Hero Section */
         .hero {
             text-align: center;
-            padding: 4rem 1.5rem;
+            padding: 2rem 1rem;
             color: #fff;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
 
         .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
+            font-size: 0.9rem;
+            max-width: 90%;
+            margin: 0 auto 1.5rem;
             opacity: 0.9;
         }
 
         /* Ad Container */
         .ad-container {
             text-align: center;
-            padding: 1.5rem 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 1rem 0;
         }
 
         /* Main Container */
         .main-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 1rem;
             display: grid;
-            grid-template-columns: 300px 1fr 300px;
-            gap: 2rem;
-            align-items: start;
+            grid-template-columns: 1fr;
+            gap: 1rem;
         }
 
         /* Ad Space */
         .ad-space {
             background: #fff;
-            border-radius: 12px;
-            padding: 1.5rem;
+            border-radius: 10px;
+            padding: 1rem;
             box-shadow: var(--shadow);
             text-align: center;
-            min-height: 250px;
+            min-height: 150px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -134,42 +146,43 @@
 
         .ad-space h3 {
             color: #666;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
         }
 
         /* Converter Section */
         .converter {
             background: #fff;
-            padding: 2.5rem;
-            border-radius: 15px;
+            padding: 1.5rem;
+            border-radius: 10px;
             box-shadow: var(--shadow);
         }
 
         .converter h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
             text-align: center;
             color: #1c1e21;
         }
 
         .input-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .input-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             font-weight: 600;
             color: #555;
+            font-size: 0.9rem;
         }
 
         #driveLinkInput {
             width: 100%;
-            padding: 0.9rem;
-            font-size: 1rem;
+            padding: 0.75rem;
+            font-size: 0.9rem;
             border: 2px solid #e1e5e9;
-            border-radius: 8px;
+            border-radius: 6px;
             transition: border-color 0.3s ease;
         }
 
@@ -182,14 +195,15 @@
             background: var(--bg-gradient);
             color: #fff;
             border: none;
-            padding: 0.9rem 1.8rem;
-            font-size: 1.1rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
             font-weight: 600;
-            border-radius: 8px;
+            border-radius: 6px;
             cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
             box-shadow: var(--shadow);
+            touch-action: manipulation;
         }
 
         .btn:hover,
@@ -199,18 +213,19 @@
         }
 
         .result-area {
-            margin-top: 2rem;
-            padding: 1.5rem;
+            margin-top: 1.5rem;
+            padding: 1rem;
             background: linear-gradient(135deg, #f0f8ff, #e6f3ff);
             border: 1px solid #b3d9ff;
-            border-radius: 12px;
+            border-radius: 8px;
             display: none;
         }
 
         .result-area strong {
             display: block;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
             color: #0056b3;
+            font-size: 0.9rem;
         }
 
         #outputLink {
@@ -218,48 +233,54 @@
             font-family: 'Courier New', monospace;
             word-break: break-all;
             background: #fff;
-            padding: 0.6rem;
+            padding: 0.5rem;
             border-radius: 6px;
             border: 1px solid #cce5ff;
             user-select: text;
+            font-size: 0.85rem;
         }
 
         .copy-btn {
             background: linear-gradient(135deg, #28a745, #20c997);
-            margin-top: 1rem;
-            padding: 0.6rem 1.2rem;
-            font-size: 0.9rem;
+            margin-top: 0.75rem;
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
         }
 
         /* Features Section */
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 1.5rem;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin: 1.5rem 1rem;
         }
 
         .feature-card {
             background: rgba(255, 255, 255, 0.95);
-            padding: 1.5rem;
-            border-radius: 12px;
+            padding: 1rem;
+            border-radius: 10px;
             text-align: center;
             box-shadow: var(--shadow);
             transition: transform 0.3s ease;
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
 
         .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
         }
 
         .feature-card h3 {
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem;
             color: var(--text-color);
+            font-size: 1rem;
+        }
+
+        .feature-card p {
+            font-size: 0.85rem;
         }
 
         /* Footer */
@@ -267,24 +288,27 @@
             background: rgba(0, 0, 0, 0.8);
             color: #fff;
             text-align: center;
-            padding: 2rem 1.5rem;
-            margin-top: 3rem;
+            padding: 1.5rem 1rem;
+            margin-top: 2rem;
         }
 
         .footer p {
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
         }
 
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1.2rem;
+            gap: 1rem;
+            margin-top: 0.75rem;
+            flex-wrap: wrap;
         }
 
         .footer-links a {
             color: #fff;
             text-decoration: none;
+            font-size: 0.85rem;
             transition: color 0.3s ease;
         }
 
@@ -294,31 +318,100 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 1200px) {
+        @media (min-width: 1200px) {
             .main-container {
-                grid-template-columns: 1fr;
+                grid-template-columns: 250px 1fr 250px;
             }
             .ad-space {
-                order: 3;
+                order: initial;
             }
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
             .nav-links {
                 display: none;
-            }
-            .converter {
-                padding: 1.5rem;
-            }
-            .footer-links {
                 flex-direction: column;
-                gap: 0.8rem;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.95);
+                padding: 1rem;
+                box-shadow: var(--shadow);
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.85rem;
+            }
+
+            .converter {
+                padding: 1rem;
+            }
+
+            .converter h2 {
+                font-size: 1.25rem;
+            }
+
+            .btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .ad-space {
+                min-height: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.25rem;
+            }
+
+            .hero p {
+                font-size: 0.8rem;
+            }
+
+            .converter h2 {
+                font-size: 1.1rem;
+            }
+
+            #driveLinkInput {
+                font-size: 0.85rem;
+                padding: 0.6rem;
+            }
+
+            .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .feature-card h3 {
+                font-size: 0.9rem;
+            }
+
+            .feature-card p {
+                font-size: 0.8rem;
+            }
+
+            .footer p {
+                font-size: 0.8rem;
+            }
+
+            .footer-links a {
+                font-size: 0.8rem;
             }
         }
 
@@ -328,7 +421,7 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
@@ -338,6 +431,9 @@
     <header class="header">
         <div class="nav-container">
             <div class="logo">🚀 Drive Converter</div>
+            <button class="hamburger" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
             <nav class="nav-links" aria-label="Main navigation">
                 <a href="#home" aria-label="Home">Home</a>
                 <a href="#features" aria-label="Features">Features</a>
@@ -406,9 +502,9 @@
             </div>
 
             <!-- How to Use -->
-            <div class="how-to-use" style="margin-top: 2rem; padding: 1.5rem; background: #f8f9fa; border-radius: 10px;">
-                <h3 style="margin-bottom: 1rem; color: var(--text-color);">📋 How to Use:</h3>
-                <ol style="color: #666; padding-left: 1.5rem;">
+            <div class="how-to-use" style="margin-top: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                <h3 style="margin-bottom: 0.75rem; color: var(--text-color); font-size: 1rem;">📋 How to Use:</h3>
+                <ol style="color: #666; padding-left: 1.2rem; font-size: 0.85rem;">
                     <li>Share your file on Google Drive.</li>
                     <li>Copy the shareable link.</li>
                     <li>Paste the link in the input box above.</li>
@@ -466,6 +562,16 @@
     </footer>
 
     <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.querySelector('i').classList.toggle('fa-bars');
+            hamburger.querySelector('i').classList.toggle('fa-times');
+        });
+
         // Prevent right-click (optional, consider accessibility)
         document.addEventListener('contextmenu', e => {
             if (e.target.closest('#driveLinkInput, #outputLink')) return;
@@ -555,6 +661,10 @@
                 const target = document.querySelector(anchor.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth' });
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        hamburger.querySelector('i').classList.replace('fa-times', 'fa-bars');
+                    }
                 }
             });
         });
