@@ -114,19 +114,13 @@
             opacity: 0.9;
         }
 
-        /* Ad Container */
-        .ad-container {
-            text-align: center;
-            padding: 1rem 0;
-        }
-
         /* Main Container */
         .main-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 250px;
             gap: 1rem;
         }
 
@@ -320,7 +314,7 @@
         /* Responsive Design */
         @media (min-width: 1200px) {
             .main-container {
-                grid-template-columns: 250px 1fr 250px;
+                grid-template-columns: 1fr 250px;
             }
             .ad-space {
                 order: initial;
@@ -372,6 +366,10 @@
 
             .ad-space {
                 min-height: 120px;
+            }
+
+            .main-container {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -449,40 +447,8 @@
         <p>Convert your Google Drive shareable links into direct download links instantly. Free, secure, and user-friendly!</p>
     </section>
 
-    <!-- Top Ad Section -->
-    <div class="ad-container">
-        <div class="ad-space">
-            <h3>Advertisement</h3>
-            <script async type="text/javascript">
-                atOptions = {
-                    'key': '63718988f07bc6d276f3c6a441757cae',
-                    'format': 'iframe',
-                    'height': 90,
-                    'width': 728,
-                    'params': {}
-                };
-            </script>
-            <script type="text/javascript" src="//www.highperformanceformat.com/63718988f07bc6d276f3c6a441757cae/invoke.jc"></script>
-        </div>
-    </div>
-
     <!-- Main Content -->
     <div class="main-container">
-        <!-- Left Ad Space -->
-        <aside class="ad-space">
-            <h3>Advertisement</h3>
-            <script async type="text/javascript">
-                atOptions = {
-                    'key': 'c620af328467e6de19dc04af696ee0fb',
-                    'format': 'iframe',
-                    'height': 250,
-                    'width': 300,
-                    'params': {}
-                };
-            </script>
-            <script type="text/javascript" src="//www.highperformanceformat.com/c620af328467e6de19dc04af696ee0fb/invoke.js"></script>
-        </aside>
-
         <!-- Converter Tool -->
         <main class="converter">
             <h2>Convert Your Link</h2>
